@@ -1,0 +1,186 @@
+/* 
+-- Fonts --
+- font-family: 'Lora', serif; Headings & Subtitles, weight: 400, 600
+- font-family: 'Poppins', sans-serif; Body, weight: 400, 500
+
+-- Colors --
+- Dark pink (primary, cta): #EE6141
+- Light pink (secondary): #FFA475
+- Cream (background): #F1EBDF
+- Gray (shadows): #c0bdb9
+- White (body text): #F8F8F8
+- Black (body text, background): #313131
+*/
+
+:root {
+	--dark-pink: #ee6141;
+	--light-pink: #ffa475;
+	--cream: #f1ebdf;
+	--gray: #c0bdb9;
+	--white: #f8f8f8;
+	--black: #313131;
+	--headings: 'Lora', serif;
+	--body: 'Poppins', sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--cream);
+	color: var(--black);
+	font-family: var(--body);
+}
+
+h1 {
+	color: var(--black);
+	letter-spacing: 0.03em;
+	font-family: var(--headings);
+	font-size: 2rem;
+}
+
+h2 {
+	font-family: var(--headings);
+}
+
+h3,
+h4 {
+	font-family: var(--headings);
+	letter-spacing: 0.05em;
+}
+
+p {
+	font-size: 0.938rem;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	color: var(--black);
+	text-decoration: none;
+	line-height: 0;
+}
+
+a:hover {
+	color: var(--dark-pink);
+	transition: color 0.3s;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+button,
+input[type='submit'] {
+	color: var(--white);
+	background-color: var(--dark-pink);
+	border: none;
+	border-radius: 10px;
+	font-family: var(--body);
+	transition: all 0.1s ease-out;
+	cursor: pointer;
+	font-size: 0.938rem;
+	padding: 0.7em;
+}
+
+button:hover,
+input[type='submit']:hover {
+	background-color: var(--light-pink);
+	color: var(--black);
+	font-weight: 600;
+}
+
+button:focus {
+	outline: solid var(--black) 2px;
+	transform: scale(0.95);
+	background-color: var(--light-pink);
+	color: var(--black);
+	font-weight: 600;
+}
+
+button:disabled,
+button[disabled] {
+	background-color: var(--gray);
+	color: var(--black);
+}
+
+@media screen and (min-width: 768px) {
+	button {
+		font-size: 1rem;
+	}
+}
+
+input[type='text'],
+input[type='email'],
+input[type='number'] {
+	background: none;
+	box-shadow: none;
+	transition: all 0.2s ease-out;
+	font-family: var(--body);
+	font-size: 0.938rem;
+	padding: 10px;
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='number']:focus {
+	border-radius: 8px;
+}
+
+/* Make the arrows from input type number disappear */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+/* Firefox */
+input[type='number'] {
+	appearance: textfield;
+	-moz-appearance: textfield;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.loading {
+	animation: pulsate-bck 1.2s ease-in-out infinite both;
+}
+
+@keyframes pulsate-bck {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(0.9);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.rice {
+	position: absolute;
+	opacity: 0.2;
+	z-index: -1;
+	width: 150px;
+	top: 4rem;
+}
+
+@media screen and (min-width: 768px) {
+	.rice {
+		width: 250px;
+		top: 5rem;
+	}
+}
